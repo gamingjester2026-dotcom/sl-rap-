@@ -1,0 +1,6 @@
+/assets
+  /music
+  /covers
+index.html
+style.css
+script.js

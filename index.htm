@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Rap Zone - Download Real Street Sounds</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0a0a0a;
+            --dark-grey: #1a1a1a;
+            --medium-grey: #2a2a2a;
+            --light-grey: #3a3a3a;
+            --accent-red: #ff0000;
+            --accent-red-hover: #cc0000;
+            --text-white: #ffffff;
+            --text-grey: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
+            background-color: var(--primary-black);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--accent-red);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-red);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        radial-gradient(circle at center, var(--dark-grey) 0%, var(--primary-black) 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,0,0,0.03) 10px,
+                rgba(255,0,0,0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-100px) translateY(-100px); }
+            100% { transform: translateX(100px) translateY(100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-grey);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-red);
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-red);
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background-color: var(--dark-grey);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background-color: var(--accent-red);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+            box-shadow: 0 10px 30px rgba(255,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-grey);
+            margin-bottom: 1rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background-color: var(--dark-grey);
+            border: 2px solid var(--medium-grey);
+            color: var(--text-white);
+            font-size: 1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 20px rgba(255,0,0,0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--accent-red);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: var(--accent-red-hover);
+        }
+
+        /* Filter Buttons */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: var(--medium-grey);
+            color: var(--text-white);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--accent-red);
+            transform: scale(1.05);
+        }
+
+        /* Song List */
+        .song-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .song-item {
+            background-color: var(--dark-grey);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .song-item:hover {
+            border-color: var(--accent-red);
+            transform: translateX(10px);
+        }
+
+        .song-info h3 {
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .song-info p {
+            color: var(--text-grey);
+            font-size: 0.9rem;
+        }
+
+        .song-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .download-count {
+            color: var(--text-grey);
+            font-size: 0.8rem;
+        }
+
+        /* Audio Player */
+        .audio-player {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            background-color: var(--medium-grey);
+            border-radius: 30px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--accent-red);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--dark-grey);
+            border: 2px solid var(--medium-grey);
+            color: var(--text-white);
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-red);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-message {
+            color: var(--accent-red);
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid var(--accent-red);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-grey);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-red);
+        }
+
+        .developer-credit {
+            color: var(--accent-red);
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--medium-grey);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .song-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--medium-grey);
+            border-top: 3px solid var(--accent-red);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll Animation */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Accent Toggle */
+        .accent-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-red);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .accent-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SL Rap Zone</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="songs.html">Songs</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sri Lanka Rap Zone</h1>
+            <p>Download Real Street Sounds</p>
+            <a href="songs.html" class="btn">Explore Tracks</a>
+        </div>
+    </section>
+
+    <!-- Featured Tracks -->
+    <section class="section">
+        <h2 class="section-title">Featured Rap Tracks</h2>
+        <div class="card-grid" id="featuredTracks"></div>
+    </section>
+
+    <!-- Latest Uploads -->
+    <section class="section">
+        <h2 class="section-title">Latest Uploads</h2>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="homeSearch" placeholder="Search for songs, artists...">
+            <button class="search-btn" onclick="searchFromHome()">🔍</button>
+        </div>
+        <div class="song-list" id="latestUploads"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="songs.html">Songs</a>
+                <a href="artists.html">Artists</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 Sri Lanka Rap Zone</p>
+            <p class="developer-credit">Developed by Thamidu Abeysinghe</p>
+            <p>Disclaimer: All songs belong to respective artists.</p>
+        </div>
+    </footer>
+
+    <!-- Accent Toggle -->
+    <button class="accent-toggle" onclick="toggleAccent()" title="Toggle Light/Dark Mode">🌓</button>
+
+    <script>
+        // Sample song data (in a real application, this would come from a database)
+        const songData = [
+            { id: 1, title: "Colombo Streets", artist: "Mic Burner", size: "4.2 MB", genre: "Trap", featured: true },
+            { id: 2, title: "Kottu Flow", artist: "Big Harsha", size: "3.8 MB", genre: "Hip-Hop", featured: true },
+            { id: 3, title: "Galle Road Dreams", artist: "Yauwan", size: "5.1 MB", genre: "Rap", featured: true },
+            { id: 4, title: "Jaffna's Finest", artist: "Krish the Rapper", size: "4.5 MB", genre: "Rap", featured: false },
+            { id: 5, title: "Hikkaduwa Vibes", artist: "Mic Burner", size: "3.9 MB", genre: "Trap", featured: false },
+            { id: 6, title: "Kandy Kush", artist: "Big Harsha", size: "4.7 MB", genre: "Hip-Hop", featured: false },
+            { id: 7, title: "Trinco Trap", artist: "Yauwan", size: "4.1 MB", genre: "Trap", featured: false },
+            { id: 8, title: "Negombo Nights", artist: "Krish the Rapper", size: "3.6 MB", genre: "Rap", featured: false }
+        ];
+
+        const artistData = [
+            { id: 1, name: "Mic Burner", image: "🎤", songs: 3, genre: "Trap" },
+            { id: 2, name: "Big Harsha", image: "🎵", songs: 2, genre: "Hip-Hop" },
+            { id: 3, name: "Yauwan", image: "🎼", songs: 2, genre: "Rap/Trap" },
+            { id: 4, name: "Krish the Rapper", image: "🎸", songs: 2, genre: "Rap" }
+        ];
+
+        // Initialize download counts from localStorage
+        let downloadCounts = JSON.parse(localStorage.getItem('downloadCounts')) || {};
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            switch(currentPage) {
+                case 'index.html':
+                case '':
+                    loadFeaturedTracks();
+                    loadLatestUploads();
+                    break;
+                case 'songs.html':
+                    loadAllSongs();
+                    setupSearch();
+                    break;
+                case 'artists.html':
+                    loadArtists();
+                    break;
+                case 'contact.html':
+                    setupContactForm();
+                    break;
+            }
+            
+            // Setup scroll animations
+            setupScrollAnimations();
+        });
+
+        // Navigation toggle for mobile
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Load featured tracks on home page
+        function loadFeaturedTracks() {
+            const container = document.getElementById('featuredTracks');
+            if (!container) return;
+            
+            const featuredSongs = songData.filter(song => song.featured);
+            
+            container.innerHTML = featuredSongs.map(song => `
+                <div class="card scroll-animate">
+                    <h3>${song.title}</h3>
+                    <p>Artist: ${song.artist}</p>
+                    <p>Size: ${song.size}</p>
+                    <p>Genre: ${song.genre}</p>
+                    <button class="btn" onclick="downloadSong(${song.id})">Download</button>
+                    <div class="download-count">${downloadCounts[song.id] || 0} downloads</div>
+                </div>
+            `).join('');
+        }
+
+        // Load latest uploads on home page
+        function loadLatestUploads() {
+            const container = document.getElementById('latestUploads');
+            if (!container) return;
+            
+            const latestSongs = songData.slice(-4).reverse();
+            
+            container.innerHTML = latestSongs.map(song => `
+                <div class="song-item scroll-animate">
+                    <div class="song-info">
+                        <h3>${song.title}</h3>
+                        <p>Artist: ${song.artist} | Size: ${song.size} | Genre: ${song.genre}</p>
+                    </div>
+                    <div class="song-actions">
+                        <div class="download-count">${downloadCounts[song.id] || 0} downloads</div>
+                        <button class="btn" onclick="downloadSong(${song.id})">Download</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Load all songs on songs page
+        function loadAllSongs(filteredSongs = null) {
+            const container = document.getElementById('allSongs');
+            if (!container) return;
+            
+            const songs = filteredSongs || songData;
+            
+            container.innerHTML = songs.map(song => `
+                <div class="song-item scroll-animate">
+                    <div class="song-info">
+                        <h3>${song.title}</h3>
+                        <p>Artist: ${song.artist} | Size: ${song.size} | Genre: ${song.genre}</p>
+                        <div class="audio-player">
+                            <audio controls preload="none">
+                                <source src="assets/music/song${song.id}.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="song-actions">
+                        <div class="download-count">${downloadCounts[song.id] || 0} downloads</div>
+                        <button class="btn" onclick="downloadSong(${song.id})">Download</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Load artists on artists page
+        function loadArtists() {
+            const container = document.getElementById('artistsList');
+            if (!container) return;
+            
+            container.innerHTML = artistData.map(artist => `
+                <div class="card scroll-animate" onclick="filterByArtist('${artist.name}')">
+                    <div style="font-size: 3rem; text-align: center;">${artist.image}</div>
+                    <h3>${artist.name}</h3>
+                    <p>Genre: ${artist.genre}</p>
+                    <p>${artist.songs} songs available</p>
+                    <button class="btn" style="width: 100%;">View Songs</button>
+                </div>
+            `).join('');
+        }
+
+        // Search functionality
+        function setupSearch() {
+            const searchBar = document.getElementById('songSearch');
+            if (!searchBar) return;
+            
+            searchBar.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredSongs = songData.filter(song => 
+                    song.title.toLowerCase().includes(searchTerm) || 
+                    song.artist.toLowerCase().includes(searchTerm) ||
+                    song.genre.toLowerCase().includes(searchTerm)
+                );
+                loadAllSongs(filteredSongs);
+            });
+        }
+
+        // Filter by artist
+        function filterByArtist(artistName) {
+            const filteredSongs = songData.filter(song => song.artist === artistName);
+            loadAllSongs(filteredSongs);
+            
+            // Scroll to songs section
+            const songsSection = document.getElementById('songsSection');
+            if (songsSection) {
+                songsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Genre filter
+        function filterByGenre(genre) {
+            const filteredSongs = songData.filter(song => song.genre === genre);
+            loadAllSongs(filteredSongs);
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Download song function
+        function downloadSong(songId) {
+            const song = songData.find(s => s.id === songId);
+            if (!song) return;
+            
+            // Increment download count
+            downloadCounts[songId] = (downloadCounts[songId] || 0) + 1;
+            localStorage.setItem('downloadCounts', JSON.stringify(downloadCounts));
+            
+            // Show download started message
+            showNotification(`Starting download: ${song.title} by ${song.artist}`);
+            
+            // Update download count display
+            const countElements = document.querySelectorAll('.download-count');
+            countElements.forEach(el => {
+                if (el.textContent.includes('downloads')) {
+                    const currentCount = el.textContent.match(/\d+/)[0];
+                    const newCount = downloadCounts[songId];
+                    el.textContent = el.textContent.replace(currentCount, newCount);
+                }
+            });
+            
+            // Simulate download (in real app, this would trigger actual file download)
+            setTimeout(() => {
+                showNotification(`Download complete: ${song.title}`);
+            }, 2000);
+        }
+
+        // Search from home page
+        function searchFromHome() {
+            const searchTerm = document.getElementById('homeSearch').value;
+            if (searchTerm.trim()) {
+                window.location.href = `songs.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+
+        // Setup contact form
+        function setupContactForm() {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Simple validation
+                let isValid = true;
+                
+                if (name.trim().length < 3) {
+                    showError('name', 'Name must be at least 3 characters long');
+                    isValid = false;
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showError('email', 'Please enter a valid email address');
+                    isValid = false;
+                }
+                
+                if (subject.trim().length < 5) {
+                    showError('subject', 'Subject must be at least 5 characters long');
+                    isValid = false;
+                }
+                
+                if (message.trim().length < 10) {
+                    showError('message', 'Message must be at least 10 characters long');
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    showNotification('Message sent successfully! We\'ll get back to you soon.');
+                    form.reset();
+                }
+            });
+            
+            // Real-time validation
+            document.getElementById('name').addEventListener('blur', function() {
+                if (this.value.trim().length < 3) {
+                    showError('name', 'Name must be at least 3 characters long');
+                } else {
+                    hideError('name');
+                }
+            });
+            
+            document.getElementById('email').addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(this.value)) {
+                    showError('email', 'Please enter a valid email address');
+                } else {
+                    hideError('email');
+                }
+            });
+        }
+
+        // Show error message
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorElement = field.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+        }
+
+        // Hide error message
+        function hideError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorElement = field.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.style.display = 'none';
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: var(--accent-red);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                z-index: 9999;
+                font-weight: bold;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Setup scroll animations
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.scroll-animate').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Toggle accent color (light/dark mode)
+        function toggleAccent() {
+            const root = document.documentElement;
+            const currentBg = getComputedStyle(root).getPropertyValue('--primary-black');
+            
+            if (currentBg.trim() === '#0a0a0a') {
+                // Light mode
+                root.style.setProperty('--primary-black', '#f5f5f5');
+                root.style.setProperty('--dark-grey', '#e0e0e0');
+                root.style.setProperty('--medium-grey', '#d0d0d0');
+                root.style.setProperty('--light-grey', '#c0c0c0');
+                root.style.setProperty('--text-white', '#0a0a0a');
+                root.style.setProperty('--text-grey', '#404040');
+            } else {
+                // Dark mode
+                root.style.setProperty('--primary-black', '#0a0a0a');
+                root.style.setProperty('--dark-grey', '#1a1a1a');
+                root.style.setProperty('--medium-grey', '#2a2a2a');
+                root.style.setProperty('--light-grey', '#3a3a3a');
+                root.style.setProperty('--text-white', '#ffffff');
+                root.style.setProperty('--text-grey', '#b0b0b0');
+            }
+        }
+
+        // Check for search parameter from home page
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            if (searchQuery && document.getElementById('songSearch')) {
+                document.getElementById('songSearch').value = searchQuery;
+                setupSearch();
+            }
+        });
+    </script>
+</body>
+</html>
